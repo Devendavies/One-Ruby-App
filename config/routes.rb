@@ -5,10 +5,21 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root '/' => 'sessions#new'
+  root 'sessions#new'
 
   # get 'welcome/awesome-sauce' => 'welcome#awesome'
   #verb 'path/resource/:id' => 'controller#action(method)'
+
+  # Auto-path to all users and tasks
+  resources :users, :tasks
+
+  # User interaction routes
+  # get    '/users'         => 'user#index'
+  # post   '/users/new'     => 'user#new'
+  # get    '/user/:id'      => 'user#show'
+  # delete '/user/:id'      => 'user#destroy'
+  # get    '/user/:id/edit' =>
+  # patch   '/user/:id'     => 'user#update'
 
   # Session routes
   get  '/login'  => 'sessions#new'
@@ -16,15 +27,9 @@ Rails.application.routes.draw do
   get  '/logout' => 'sessions#destroy', :to => redirect('/login')
 
   # Task posting routes
-  get '/tasks'      => 'tasks#index'
-  get  '/tasks/new' => 'tasks#new'
-  post '/tasks/new' => 'tasks#create'
-
-  # User interaction routes
-  get    '/user/all'  => 'user#index'
-  post   '/user/new'  => 'user#new'
-  get    '/user/:id'  => 'user#view'
-  delete '/user/:id'  => 'user#destroy'
+  # get  '/tasks'     => 'tasks#index'
+  # get  '/tasks/new' => 'tasks#new'
+  # post '/tasks/new' => 'tasks#create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

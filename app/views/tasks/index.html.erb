@@ -7,11 +7,11 @@
     <div class="list">
       <span>
 
-        <div class="cheerup">
+        <div class="task">
           <h3><%= task.priority %> </h3>
           <p><%= task.content %></p>
           <% if task.author == current_user %>
-            <%= link_to "Edit Your cheerup" , edit_task_path(id: task.id) %>
+            <%= link_to "Edit Your task" , edit_task_path(id: task.id) %>
           <% end %>
         </div>
 

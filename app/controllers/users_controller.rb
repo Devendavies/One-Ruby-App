@@ -18,15 +18,23 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      redirect_to('/todo/login')
+      redirect_to('/login')
     else
-      redirect_to('users/new')
+      redirect_to('/users/new')
     end
   end
 
   # User Profile
   def show
     @user = User.find(params[:id])
+  end
+
+  # Update User Profile
+  def update
+    @user = User.find(params[:id])
+  end
+
+  def destroy
   end
 
   private
