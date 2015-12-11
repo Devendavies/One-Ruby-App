@@ -1,0 +1,13 @@
+<div class="new_task">
+
+  <h2> Create A New Task </h2>
+
+  <%= form_for @tasks, url: '/task/new' do |f| %>
+    <ul>
+      <li><%= f.text_field :priority %> </li>
+      <li><%= f.text_field :content  %> </li>
+      <li><%= f.submit     "Create"  %> </li>
+    </ul>
+  <% end %>
+
+</div>

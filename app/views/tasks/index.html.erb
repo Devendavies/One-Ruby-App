@@ -1,0 +1,20 @@
+<div class="header">
+  <h1>Welcome to Taskify!</h1>
+  <p> List it | Learn it, Love it </p>
+</div>
+
+  <% @tasks.each do |task| %>
+    <div class="list">
+      <span>
+
+        <div class="cheerup">
+          <h3><%= task.priority %> </h3>
+          <p><%= task.content %></p>
+          <% if task.author == current_user %>
+            <%= link_to "Edit Your cheerup" , edit_task_path(id: task.id) %>
+          <% end %>
+        </div>
+
+      </span>
+    </div>
+  <% end %>

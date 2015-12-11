@@ -1,0 +1,12 @@
+<div class="task-editor">
+  <ul>
+    <li>
+      <% if @user.id == true %>
+          <%= @cheerup.title %>
+          <%= @cheerup.content %>
+      <% else %>
+        <% "Permission Denied" %>
+      <% end %>
+    </li>
+  </ul>
+</div>
