@@ -17,12 +17,15 @@ ActiveRecord::Schema.define(version: 20151211171356) do
   enable_extension "plpgsql"
 
   create_table "tasks", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "priority"
-    t.string   "author"
     t.string   "content"
+    t.boolean  "completed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "image_url"

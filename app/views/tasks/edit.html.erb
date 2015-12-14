@@ -1,0 +1,12 @@
+<div class="task-update-form">
+
+  <%= form_for @task do |f| %>
+
+    <%= link_to "X", task_path, method: :delete, data: {confirm: "Delete this task permanently?"} %>
+    Priority: <%= f.select :priority, [['Want', 'want'], ['Need', 'need']] %>
+    Task:     <%= f.text_area  :content  %>
+    <%= f.submit "Complete Edit" %>
+
+  <% end %>
+
+</div>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root 'sessions#new'
+  root 'sessions#destroy'
 
   # get 'welcome/awesome-sauce' => 'welcome#awesome'
   #verb 'path/resource/:id' => 'controller#action(method)'

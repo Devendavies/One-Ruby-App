@@ -2,11 +2,11 @@
 
   <h2> Create A New Task </h2>
 
-  <%= form_for @tasks, url: '/task/new' do |f| %>
+  <%= form_for @task, url: '/tasks' do |f| %>
     <ul>
-      <li><%= f.text_field :priority %> </li>
-      <li><%= f.text_field :content  %> </li>
-      <li><%= f.submit     "Create"  %> </li>
+      <li> Priority: <%= f.select :priority, [['Want', 'want'], ['Need', 'need']] %> </li>
+      <li> Task:     <%= f.text_field :content  %> </li>
+      <li>           <%= f.submit     "Create Task"  %> </li>
     </ul>
   <% end %>
 

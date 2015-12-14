@@ -1,20 +1,80 @@
 <div class="header">
   <h1>Welcome to Taskify!</h1>
-  <p> List it | Learn it, Love it </p>
+  <p> List it | Learn it | Love it </p>
 </div>
 
-  <% @tasks.each do |task| %>
-    <div class="list">
-      <span>
+<!-- Container for all 3 lists -->
+<div class="lists-container">
+  <ul>
+    <li>
 
-        <div class="task">
-          <h3><%= task.priority %> </h3>
-          <p><%= task.content %></p>
-          <% if task.author == current_user %>
-            <%= link_to "Edit Your task" , edit_task_path(id: task.id) %>
+      <div class="need-tasks">
+        <ul>
+          <h2> DO IT NOW </h2>
+          <% @tasks.select{|task| task.priority == "need" }.each do |task| %>
+                <li>
+
+                  <div class="task">
+                    <p><%= task.content %>
+                      <% if task.user_id == current_user.id %>
+                        <%= link_to "edit" , edit_task_path(id: task.id) %>
+                      <% end %>
+                    </p>
+                  </div>
+
+                </li>
           <% end %>
-        </div>
+        </ul>
+      </div>
 
-      </span>
-    </div>
-  <% end %>
+    </li>
+
+    <li>
+
+      <div class="want-tasks">
+        <ul>
+          <h2> Meh, you can always do it later... </h2>
+          <% @tasks.select{|task| task.priority == "want" }.each do |task| %>
+                <li>
+
+                  <div class="task">
+                    <p><%= task.content %>
+                      <% if task.user_id == current_user.id %>
+                        <%= link_to "edit" , edit_task_path(id: task.id) %>
+                      <% end %>
+                    </p>
+                  </div>
+
+                </li>
+          <% end %>
+        </ul>
+      </div>
+
+    </li>
+
+    <li>
+
+      <div class="completed-tasks">
+        <ul>
+          <h2> Well done </h2>
+          <% @tasks.select{|task| task.completed == true }.each do |task| %>
+            <li>
+
+              <div class="task">
+                <p><%= task.content %>
+                  <% if task.user_id == current_user.id %>
+                    <%= link_to "edit" , edit_task_path(id: task.id) %>
+                  <% end %>
+                </p>
+              </div>
+
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+    </li>
+
+  </ul>
+
+</div>

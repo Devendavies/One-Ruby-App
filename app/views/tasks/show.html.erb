@@ -1,8 +1,8 @@
-<div class="task-editor">
+<div class="tasks">
   <ul>
     <li>
       <% if @user.id == true %>
-          <%= @task.title %>
+          <%= @tasks.priority %>
           <%= @task.content %>
       <% else %>
         <% "Permission Denied" %>

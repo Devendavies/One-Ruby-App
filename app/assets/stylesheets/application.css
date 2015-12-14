@@ -13,3 +13,81 @@
  *= require_tree .
  *= require_self
  */
+
+ element.style {
+   padding-bottom: 20px !important;
+ }
+
+.nav-bar {
+  background-color: grey;
+  padding-bottom: 2px;
+}
+
+ h2 {
+   text-align: center;
+   font-size: 12px;
+ }
+
+p {
+  margin: 2px;
+}
+
+ul {
+  padding-left: 2px;
+  padding-bottom: 15px;
+}
+
+.task a {
+  border-radius: 5px;
+  border-color: silver;
+  border-width: 2px;
+}
+
+.lists-container li {
+  font-size: 12px;
+  display: inline-block;
+}
+
+.need-tasks {
+  width: 220px;
+  min-height: 50px;
+  float: left;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-color: rgba(255, 0, 0, 0.6);
+  border-radius: 20px;
+  border-style: groove;
+  border-width: 5px;
+}
+
+.need-tasks li {
+  display: block;
+}
+
+.want-tasks {
+  width: 220px;
+  min-height: 50px;
+  clear: both;
+  background-color: rgba( 255, 255, 0, 0.1);
+  border-color: rgba( 255, 255, 0, 0.6);
+  border-radius: 20px;
+  border-style: groove;
+  border-width: 5px;
+}
+
+.want-tasks li {
+  display: block;
+}
+
+.completed-tasks {
+  width: 220px;
+  min-height: 50px;
+  background-color: rgba( 0, 255, 0, 0.1);
+  border-color: rgba( 0, 255, 0, 0.6);
+  border-radius: 20px;
+  border-style: groove;
+  border-width: 5px;
+}
+
+.completed-tasks li {
+  display: block;
+}
